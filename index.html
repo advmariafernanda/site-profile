@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adv. Maria Fernanda Justimiano - Matuk Advogados</title>
+  <meta name="description" content="Maria Fernanda Justimiano — Advogada. Direito Processual Penal, Direito Constitucional, Direito Penal, Direito Trabalhista e Consultoria Jurídica." />
+  <title>Maria Fernanda Justimiano | Matuk Advogados</title>
+
   <style>
     :root {
-      --primary: #b5795e;
-      --primary-light: #d4956f;
-      --secondary: #f3c6a8;
-      --accent: #c9a24d;
-      --text-dark: #2d2d2d;
-      --text-light: #666;
-      --white: #ffffff;
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-      --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.18);
+      --bg: #f5f1ed;
+      --bg-strong: #eee5dc;
+      --panel: #fffdfb;
+      --panel-soft: #f4efe9;
+      --button-dark: #1f1d1b;
+      --button-dark-strong: #2c2927;
+      --text: #211f1d;
+      --muted: #625b56;
+      --line: #e6ddd5;
+      --gold: #a8862d;
+      --gold-soft: #c7ac62;
+      --shadow: 0 18px 42px rgba(26, 20, 16, 0.10);
+      --shadow-hover: 0 22px 52px rgba(26, 20, 16, 0.15);
     }
 
     * {
@@ -28,31 +34,43 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(168, 134, 45, 0.05), transparent 28%),
+        linear-gradient(180deg, #f8f5f2 0%, var(--bg) 100%);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px 16px 30px;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .container {
       width: 100%;
-      max-width: 500px;
-      background: var(--white);
-      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
       overflow: hidden;
       box-shadow: var(--shadow);
       animation: slideUp 0.6s ease-out;
+      backdrop-filter: blur(6px);
     }
 
     @keyframes slideUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(24px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -60,28 +78,36 @@
     }
 
     .header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      padding: 40px 24px 30px;
+      background: linear-gradient(135deg, #f8f2ec 0%, #eee4da 100%);
+      padding: 38px 24px 30px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid var(--line);
     }
 
     .header::before {
-      content: '';
+      content: "";
       position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: drift 20s linear infinite;
+      top: -55%;
+      right: -45%;
+      width: 170%;
+      height: 170%;
+      background:
+        radial-gradient(circle, rgba(31, 29, 27, 0.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      animation: drift 18s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes drift {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(36px, 36px);
+      }
     }
 
     .header-content {
@@ -90,19 +116,19 @@
     }
 
     .photo-wrapper {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 24px;
+      width: 138px;
+      height: 138px;
+      margin: 0 auto 22px;
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid var(--white);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      border: 5px solid rgba(255, 255, 255, 0.97);
+      box-shadow: 0 12px 40px rgba(31, 29, 27, 0.13);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .photo-wrapper:hover {
-      transform: scale(1.05);
-      box-shadow: 0 16px 50px rgba(0,0,0,0.25);
+      transform: scale(1.035);
+      box-shadow: 0 16px 50px rgba(31, 29, 27, 0.18);
     }
 
     .photo-wrapper img {
@@ -113,96 +139,153 @@
 
     .name {
       font-size: 28px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+      line-height: 1.15;
+      font-weight: 750;
+      color: var(--text);
+      margin-bottom: 9px;
+      letter-spacing: -0.65px;
     }
 
-    .subtitle {
-      font-size: 16px;
-      color: rgba(255,255,255,0.95);
-      font-weight: 500;
-      margin-bottom: 0;
-      letter-spacing: 0.5px;
+    .role {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 5px;
+      letter-spacing: 0.1px;
+    }
+
+    .specialties {
+      max-width: 370px;
+      margin: 0 auto;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .specialties strong {
+      color: var(--text);
+      font-weight: 650;
     }
 
     .content {
-      padding: 32px 24px;
+      padding: 30px 24px 26px;
       text-align: center;
     }
 
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--accent), #d4a959);
-      color: var(--white);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
+    .office {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--button-dark);
+      color: #f9f5f2;
+      padding: 8px 17px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.05px;
       text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(31, 29, 27, 0.12);
+      margin-bottom: 20px;
     }
 
     .description {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text-light);
-      margin-bottom: 32px;
-      font-weight: 400;
+      max-width: 410px;
+      margin: 0 auto 27px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
     }
 
     .description strong {
-      color: var(--primary);
-      font-weight: 600;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .areas-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.25px;
+      font-weight: 750;
+      color: #716861;
+      margin-bottom: 12px;
     }
 
     .areas {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 32px;
+      gap: 10px;
+      margin-bottom: 28px;
     }
 
     .area-item {
-      background: #f9f7f4;
-      padding: 16px 12px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary);
-      transition: all 0.3s ease;
-      border-left: 4px solid transparent;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 13px 10px;
+      border-radius: 11px;
+      background: var(--panel-soft);
+      border: 1px solid #e9e0d8;
+      border-left: 3px solid rgba(31, 29, 27, 0.24);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 650;
+      line-height: 1.35;
+      transition: all 0.25s ease;
     }
 
     .area-item:hover {
-      background: #f0e8e0;
-      border-left-color: var(--accent);
       transform: translateY(-2px);
+      background: #eee7e0;
+      border-left-color: var(--gold);
+      box-shadow: 0 7px 18px rgba(31, 29, 27, 0.06);
+    }
+
+    .area-item span {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #dfd3c9, transparent);
+      margin: 1px 0 24px;
     }
 
     .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 50px;
+      width: min(100%, 280px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      background: linear-gradient(135deg, var(--button-dark) 0%, var(--button-dark-strong) 100%);
+      color: #f9f5f2;
+      padding: 14px 28px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.15px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 16px rgba(181, 121, 94, 0.3);
-      margin-bottom: 24px;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(31, 29, 27, 0.18);
+      margin-bottom: 20px;
+    }
+
+    .cta-button::after {
+      content: "→";
+      margin-left: 9px;
+      font-size: 16px;
+      transition: transform 0.25s ease;
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(181, 121, 94, 0.4);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .cta-button:hover::after {
+      transform: translateX(3px);
     }
 
     .cta-button:active {
@@ -212,103 +295,80 @@
     .socials {
       display: flex;
       justify-content: center;
-      gap: 16px;
       align-items: center;
-      margin-bottom: 32px;
+      gap: 13px;
       flex-wrap: wrap;
+      margin-bottom: 25px;
     }
 
     .social-link {
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      background: #f9f7f4;
+      background: var(--button-dark);
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
+      transition: all 0.25s ease;
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 18px rgba(31, 29, 27, 0.12);
     }
 
     .social-link:hover {
-      background: var(--primary);
-      border-color: var(--accent);
+      background: var(--button-dark-strong);
+      border-color: rgba(255, 255, 255, 0.35);
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(181, 121, 94, 0.3);
+      box-shadow: 0 10px 22px rgba(31, 29, 27, 0.18);
     }
 
     .social-link img {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       object-fit: contain;
-      transition: filter 0.3s ease;
+      filter: brightness(0) invert(1);
+      transition: transform 0.25s ease;
     }
 
     .social-link:hover img {
-      filter: brightness(0) invert(1);
+      transform: scale(1.06);
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #e0d5cc, transparent);
-      margin: 32px 0;
+    .footer-logo {
+      padding-top: 20px;
+      border-top: 1px solid rgba(223, 211, 201, 0.75);
     }
 
-    .logo-section {
-      background: linear-gradient(135deg, #fde9dc, #fbdfc8);
-      padding: 24px;
-      text-align: center;
-      border-top: 1px solid #f0e6dd;
+    .footer-logo img {
+      display: block;
+      width: min(100%, 245px);
+      height: auto;
+      margin: 0 auto;
+      object-fit: contain;
     }
 
-    .logo {
-      display: inline-block;
+    .footnote {
+      margin-top: 12px;
+      font-size: 10.5px;
+      color: #8a8079;
+      letter-spacing: 0.2px;
     }
 
-    .logo-text {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 4px;
-    }
-
-    .logo-subtitle {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--primary);
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    /* Mobile optimization */
     @media (max-width: 480px) {
       body {
         padding: 12px;
       }
 
       .container {
-        border-radius: 16px;
+        border-radius: 18px;
       }
 
       .header {
-        padding: 32px 20px 24px;
+        padding: 31px 18px 25px;
       }
 
       .content {
-        padding: 24px 20px;
-      }
-
-      .name {
-        font-size: 24px;
-      }
-
-      .subtitle {
-        font-size: 14px;
+        padding: 26px 18px 22px;
       }
 
       .photo-wrapper {
@@ -317,48 +377,40 @@
         border-width: 4px;
       }
 
-      .description {
-        font-size: 14px;
-        line-height: 1.7;
+      .name {
+        font-size: 24px;
       }
 
-      .areas {
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .role {
+        font-size: 14px;
+      }
+
+      .specialties {
+        font-size: 13.5px;
+      }
+
+      .description {
+        font-size: 13.5px;
       }
 
       .area-item {
-        padding: 14px 12px;
         font-size: 12px;
-      }
-
-      .socials {
-        gap: 12px;
-      }
-
-      .social-link {
-        width: 44px;
-        height: 44px;
-      }
-
-      .cta-button {
-        padding: 12px 28px;
-        font-size: 13px;
-      }
-
-      .logo-text {
-        font-size: 28px;
-      }
-
-      .logo-subtitle {
-        font-size: 10px;
+        min-height: 54px;
       }
     }
 
     @media (max-width: 360px) {
+      .header {
+        padding: 28px 14px 23px;
+      }
+
+      .content {
+        padding: 23px 14px 20px;
+      }
+
       .photo-wrapper {
-        width: 110px;
-        height: 110px;
+        width: 108px;
+        height: 108px;
         border-width: 3px;
       }
 
@@ -366,80 +418,179 @@
         font-size: 22px;
       }
 
-      .subtitle {
+      .specialties {
         font-size: 13px;
       }
 
-      .description {
+      .areas {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-button {
+        min-height: 49px;
         font-size: 13px;
       }
+    }
 
-      .socials {
-        gap: 10px;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .social-link {
-        width: 40px;
-        height: 40px;
+      .container {
+        animation: none;
       }
 
-      .social-link img {
-        width: 20px;
-        height: 20px;
+      .header::before {
+        animation: none;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="header-content">
-        <div class="photo-wrapper">
-          <img src="Imagens_Logos/Perfil.png" alt="Adv. Maria Fernanda Justimiano" loading="lazy" />
+  <main class="page-shell">
+    <section class="container">
+
+      <!-- Cabeçalho / Apresentação -->
+      <header class="header">
+        <div class="header-content">
+
+          <div class="photo-wrapper">
+            <img
+              src="../Imagens_Logos/Perfil.png"
+              alt="Advogada Maria Fernanda Justimiano"
+              loading="lazy"
+            />
+          </div>
+
+          <h1 class="name">Maria Fernanda Justimiano</h1>
+
+          <p class="role">Advogada</p>
+
+          <p class="specialties">
+            Formação especializada em
+            <strong>Direito Processual Penal</strong> e
+            <strong>Direito Constitucional</strong>.
+          </p>
+
         </div>
-        <h1 class="name">Maria Fernanda Justimiano</h1>
-        <p class="subtitle">Advogada especialista em Direito Criminal e Constitucional</p>
-      </div>
-    </div>
+      </header>
 
-    <div class="content">
-      <span class="badge">Matuk Advogados</span>
+      <!-- Conteúdo principal -->
+      <div class="content">
 
-      <p class="description">
-        Com atuação em áreas cíveis, trabalhista e criminal do direito. Escritório MATUK ADVOGADOS é conceituado no mercado e nas academias da região.
-      </p>
+        <div class="office">Matuk Advogados</div>
 
-      <div class="areas">
-        <div class="area-item">🏛️ Direito Criminal</div>
-        <div class="area-item">⚖️ Direito Trabalhista</div>
-        <div class="area-item">📋 Direito Constitucional</div>
-        <div class="area-item">💼 Consultoria Jurídica</div>
-      </div>
+        <p class="description">
+          Atua junto à equipe do escritório <strong>Matuk Advogados</strong>,
+          com atendimento jurídico personalizado e atuação em demandas
+          <strong>cíveis e trabalhistas</strong>.
+        </p>
 
-      <a href="https://wa.me/5535997759010?text=Olá%20Maria%20Fernanda!" class="cta-button">
-        Entrar em Contato
-      </a>
+        <p class="areas-title">Áreas de atuação</p>
 
-      <div class="socials">
-        <a href="https://wa.me/5535997759010?text=Olá%20Maria%20Fernanda!" class="social-link" aria-label="WhatsApp" title="WhatsApp">
-          <img src="Imagens_Logos/Icon1.png" alt="WhatsApp" loading="lazy" />
+        <div class="areas">
+          <div class="area-item">
+            <span>🏛️</span>
+            <span>Direito Penal</span>
+          </div>
+
+          <div class="area-item">
+            <span>⚖️</span>
+            <span>Direito Trabalhista</span>
+          </div>
+
+          <div class="area-item">
+            <span>📋</span>
+            <span>Direito Constitucional</span>
+          </div>
+
+          <div class="area-item">
+            <span>💼</span>
+            <span>Consultoria Jurídica</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- CTA principal -->
+        <a
+          href="https://wa.me/5535997759010?text=Ol%C3%A1%2C%20Dra.%20Maria%20Fernanda%21%20Encontrei%20seu%20contato%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica.%20Poderia%20me%20atender%2C%20por%20favor%3F"
+          class="cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar com Maria Fernanda pelo WhatsApp"
+        >
+          Agendar uma Consulta
         </a>
-        <a href="https://www.linkedin.com/in/maria-fernanda-justimiano-743743205/" class="social-link" aria-label="LinkedIn" title="LinkedIn">
-          <img src="Imagens_Logos/Icon2.png" alt="LinkedIn" loading="lazy" />
-        </a>
-        <a href="mailto:mariafernanda@matuk.adv.br" class="social-link" aria-label="Email" title="Email">
-          <img src="Imagens_Logos/Icon3.png" alt="Email" loading="lazy" />
-        </a>
-      </div>
-    </div>
 
-    <div class="logo-section">
-      <div class="logo">
-        <!--<div class="logo-text">MATUK</div>-->
-        <!--<div class="logo-subtitle">Advogados</div>-->
-        <img src="Imagens_Logos/Logo_Matuk.png" alt="Logo" width=300px height= 100px />
+        <!-- Redes / contatos -->
+        <div class="socials">
+
+          <a
+            href="https://wa.me/5535997759010?text=Ol%C3%A1%2C%20Dra.%20Maria%20Fernanda%21%20Encontrei%20seu%20contato%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica.%20Poderia%20me%20atender%2C%20por%20favor%3F"
+            class="social-link"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../Imagens_Logos/Icon1.png"
+              alt="WhatsApp"
+              loading="lazy"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/maria-fernanda-justimiano-743743205/"
+            class="social-link"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../Imagens_Logos/Icon2.png"
+              alt="LinkedIn"
+              loading="lazy"
+            />
+          </a>
+
+          <a
+            href="mailto:mariafernanda@matuk.adv.br"
+            class="social-link"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <img
+              src="../Imagens_Logos/Icon3.png"
+              alt="E-mail"
+              loading="lazy"
+            />
+          </a>
+
+        </div>
+
+        <!-- Logo do escritório dentro do próprio card -->
+        <div class="footer-logo">
+          <img
+            src="../Imagens_Logos/Logo_Matuk.png"
+            alt="Matuk Advogados"
+            loading="lazy"
+          />
+          <p class="footnote">Atendimento jurídico personalizado.</p>
+        </div>
+
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </body>
 </html>
